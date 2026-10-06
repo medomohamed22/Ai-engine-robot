@@ -1,0 +1,17 @@
+[project]
+name = "eva-motion-engine"
+version = "0.1.0"
+description = "Simulation-first humanoid motion training engine with AI coaching and sim-to-real policy export."
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.0",
+  "torch>=2.5",
+  "pyyaml>=6.0",
+  "requests>=2.32"
+]
+
+[project.optional-dependencies]
+rl = ["gymnasium>=1.0", "stable-baselines3>=2.5"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

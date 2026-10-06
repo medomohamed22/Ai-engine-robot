@@ -1,0 +1,43 @@
+{
+  "run": {
+    "name": "mock_walk_v1",
+    "seed": 42,
+    "episodes": 24,
+    "max_steps": 260,
+    "checkpoint_every": 4
+  },
+  "task": {
+    "goal": "Stand stably, then walk forward with low energy use.",
+    "target_distance_m": 3.0
+  },
+  "env": {
+    "dt": 0.02,
+    "action_scale": 0.24,
+    "domain_randomization": {
+      "enabled": true,
+      "mass_scale": [
+        0.92,
+        1.08
+      ],
+      "friction": [
+        0.7,
+        1.2
+      ],
+      "sensor_noise_std": 0.01
+    }
+  },
+  "policy": {
+    "hidden": [
+      128,
+      128
+    ],
+    "lr": 0.0005
+  },
+  "coach": {
+    "enabled": false,
+    "provider": "openrouter",
+    "model": "",
+    "base_url": "",
+    "every_episodes": 4
+  }
+}
